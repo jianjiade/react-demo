@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/react.js"></script>
+    <script src="../lib/JSXTransformer.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/jsx">
+    var Avanar = React.createClass({
+        render: function(){
+            return (
+                <div>
+                    <ProfilePic username={this.props.username} />
+                    <ProfileLink username ={this.props.username} />
+                </div>
+            );
+        }
+    });
+
+    var ProfilePic = React.createClass({
+        render: function () {
+            return (
+                    <img src={'http://graph.facebook.com/' + this.props.username + '/picture' } />
+            );
+        }
+    });
+
+    var ProfileLink = React.createClass({
+        render: function() {
+            return (
+                <a href={'http://www.facebook.com/' + this.props.username} >
+                    {this.props.username}
+                </a>
+            );
+        }
+    });
+
+    React.render(
+            <Avanar username="iu2fish" />,
+            document.getElementById('example')
+    );
+</script>
+</body>
+</html>
