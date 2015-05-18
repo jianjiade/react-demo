@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>React getDOMNode</title>
+    <script src="../lib/react.js"></script>
+    <script src="../lib/JSXTransformer.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/jsx">
+    var MyComponent = React.createClass({
+        handleClick: function () {
+            this.refs.myTextInput.getDOMNode().focus();
+        },
+        render: function () {
+            return (
+                    <div>
+                        <input type="text" ref="myTextInput" />
+                        <input type="button" value="Focus the text input " onClick={this.handleClick} />
+                    </div>
+            );
+        }
+    });
+
+    React.render(
+            <MyComponent />,
+            document.getElementById('example')
+    );
+</script>
+</body>
+</html>
