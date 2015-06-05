@@ -70,7 +70,7 @@ var FilterableProductTable = React.createClass({
         );
     }
 });
-
+//
 
 var PRODUCTS = [
     {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
