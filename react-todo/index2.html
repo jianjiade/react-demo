@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>标题</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <script src="../lib/react.js"></script>
+    <script src="../lib/JSXTransformer.js"></script>
+</head>
+<body>
+<div id="iu2fish"></div>
+<script type="text/jsx">
+    var CheckLink = React.createClass({
+        render: function(){
+                return <a {...this.props}>{'√'}{this.props.children}</a>;
+        }
+    });
+    React.render(
+            <CheckLink href="/checked.html">Click Here!</CheckLink>,document.getElementById('iu2fish')
+    )
+</script>
+</body>
+</html>
