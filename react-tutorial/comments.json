@@ -1,30 +1,17 @@
 [
     {
+        "id": 1388534400000,
         "author": "Pete Hunt",
         "text": "Hey there!"
     },
     {
-        "author": "wangfeng",
-        "text": "nihao"
+        "id": 1420070400000,
+        "author": "Paul O’Shannessy",
+        "text": "React is *great*!"
     },
     {
-        "author": "test",
-        "text": "fj"
-    },
-    {
-        "author": "ff",
-        "text": "jin"
-    },
-    {
-        "author": "王峰",
-        "text": "你好"
-    },
-    {
-        "author": "王峰",
-        "text": "你好"
-    },
-    {
-        "author": "你还",
-        "text": "你还"
+        "id": 1464511470381,
+        "author": "gg",
+        "text": "ggg"
     }
 ]
