@@ -9,22 +9,51 @@
 <body>
 <div id="example"></div>
 <script type="text/jsx">
-    var HelloWorld = React.createClass({
-        render: function () {
-            return (
-                    <p>
-                        Hello, <input type="text" placeholder="Your Name here" />!
-                        It is {this.props.date.toTimeString()}
-                    </p>
-            );
+    var TestHandlerClick = React.createClass({
+        handleClick: function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            var tipElement = React.findDOMNode(this.refs.tip);
+
+            if(tipElement.style.display === 'none'){
+                 tipElement.style.display = 'inline';
+            } else {
+                tipElement.style.display = 'none';
+            }
+
+        },
+        render:function () {
+            return <div><button onClick={this.handleClick}>showOrHide</button><span ref="tip">点击显示隐藏</span></div>;
         }
     });
-    setInterval(function () {
-        React.render(
-                <HelloWorld date={new Date()} />,
-                document.getElementById('example')
-        );
-    }, 500);
+
+    var TestInputHandle = React.createClass({
+        getInitialState:function () {
+          return {
+              inputText:''
+          }
+        },
+        inputHandle: function (event) {
+            this.setState({
+                inputText:event.target.value
+            })
+        },
+        render: function () {
+            return <div><input type="text" onChange={this.inputHandle}/> <span>{this.state.inputText}</span> </div>
+
+        }
+    })
+
+    React.render(
+            <div>
+                <TestHandlerClick />
+                <TestInputHandle />
+            </div>,
+            document.getElementById('example'));
+
+
+
+
 </script>
 </body>
 </html>
